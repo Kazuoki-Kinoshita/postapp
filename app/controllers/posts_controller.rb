@@ -8,8 +8,13 @@ class PostsController < ApplicationController
     redirect_to new_post_path
   end
 
+  def index
+    @post = Post.all
+  end
+
   private
   def post_params
     parames.require(:post).permit(:content)
   end
+
 end
