@@ -4,8 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, notice: "投稿を作成しました！"
+    else
+      render :new
+    end
   end
 
   def index
