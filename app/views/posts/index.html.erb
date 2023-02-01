@@ -4,7 +4,6 @@
   <tr>
     <th>内容</th>
   </tr>
-
   <% @post.each do |post| %>
     <tr>
       <td><%= post.content %></td>
@@ -14,4 +13,3 @@
     </tr>
   <% end %>
 <table>
-<%= link_to "新しく投稿する", new_post_path %>
